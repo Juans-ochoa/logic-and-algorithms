@@ -38,3 +38,36 @@ For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13, return tru
 // }
 
 // console.log(checkForTarget([1, 2, 4, 6, 8, 9, 14, 15], 13));
+
+/**
+ * Example 3: Given two sorted integer arrays arr1 and arr2, return a new array that combines both of them and is also sorted.
+ */
+function combine(arr1, arr2) {
+  let ans = [];
+  let i = 0,
+    j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      ans.push(arr1[i]);
+      i++;
+    } else {
+      ans.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (i < arr1.length) {
+    ans.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    ans.push(arr2[j]);
+    j++;
+  }
+
+  return ans;
+}
+
+combine([1, 4, 7, 20], [3, 5, 6]);
