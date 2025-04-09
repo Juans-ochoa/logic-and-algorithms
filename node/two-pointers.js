@@ -117,3 +117,30 @@ A subsequence of a string is a sequence of characters that can be obtained by de
 // }
 
 // console.log(revertString("HolaMundo"));
+
+/**Move all ceros at the end,  without additional array */
+function moveCerosAtEnd(arr = []) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    if (arr[left] === 0) {
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      right--;
+    } else {
+      left++;
+    }
+  }
+
+  //   while (left < right) {
+  //     if (arr[left] === 0) {
+  //       [arr[left], arr[right]] = [arr[right], arr[left]];
+  //       right--;
+  //     }
+  //     left++;
+  //   }
+
+  console.log(arr);
+}
+
+moveCerosAtEnd([1, 2, 3, 0, 0, 4, 4]);

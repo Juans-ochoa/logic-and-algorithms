@@ -74,3 +74,18 @@
 #     return ''.join(chars)
 
 # print(reverseString('HelloWorld'))
+
+# def moveCerosToEnd(arr:list)->list:
+# 	left = 0
+# 	right = len(arr) -1
+
+# 	while left < right:
+# 		if arr[left] == 0:
+# 			arr[left], arr[right] = arr[right], arr[left]
+# 			right -= 1
+# 		else:
+# 			left += 1
+
+# 	return arr;
+
+# print(moveCerosToEnd([0, 1, 0, 3, 12]))
