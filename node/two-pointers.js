@@ -236,28 +236,28 @@ A subsequence of a string is a sequence of characters that can be obtained by de
  * El algoritmo del problema de la bandera nacional holandesa (Dutch National Flag Problem), propuesto por Edsger Dijkstra, es una forma eficiente de ordenar un arreglo que contiene solo tres tipos de elementos (en este caso, 0, 1 y 2). El objetivo es agrupar los elementos iguales juntos en una sola pasada del arreglo, logrando una complejidad temporal de O(n) y sin usar espacio adicional.
  */
 
-function sortColors(array = []) {
-  let low = 0,
-    mid = 0,
-    hight = array.length - 1;
+// function sortColors(array = []) {
+//   let low = 0,
+//     mid = 0,
+//     hight = array.length - 1;
 
-  while (mid <= hight) {
-    if (array[mid] === 0) {
-      [array[low], array[mid]] = [array[mid], array[low]];
-      mid++;
-      low++;
-    } else if (array[mid] === 1) {
-      mid++;
-    } else {
-      [array[hight], array[mid]] = [array[mid], array[hight]];
-      hight--;
-    }
-  }
+//   while (mid <= hight) {
+//     if (array[mid] === 0) {
+//       [array[low], array[mid]] = [array[mid], array[low]];
+//       mid++;
+//       low++;
+//     } else if (array[mid] === 1) {
+//       mid++;
+//     } else {
+//       [array[hight], array[mid]] = [array[mid], array[hight]];
+//       hight--;
+//     }
+//   }
 
-  return array;
-}
+//   return array;
+// }
 
-console.log(sortColors([2, 0, 2, 0, 1, 1, 0]));
+// console.log(sortColors([2, 0, 2, 0, 1, 1, 0]));
 //Iteraciones
 // 0 -> hight = 6-1, low=0, mid=0, array[mid=0] = 2
 //result -> [0,0,2,0,1,1,2], height=5
@@ -273,3 +273,31 @@ console.log(sortColors([2, 0, 2, 0, 1, 1, 0]));
 //result -> [0,0,0,1,1,2,2], mid=4, low=3,height=4
 // 6 -> hight=4, low=2, mid=3, array[mid=3]=0, [0,0,0,1,1,2,2] end
 //result -> [0,0,0,1,1,2,2], mid=4, low=3,height=4
+
+// 4. Cuadrados de un array ordenado
+// Problema: Devuelve un nuevo array con los cuadrados ordenados.
+// function sortedSquares(array = []) {
+//   let result = new Array(array.length);
+//   let left = 0,
+//     right = array.length - 1,
+//     index = array.length - 1;
+
+//   while (left <= right) {
+//     const leftSquare = array[left] ** 2;
+//     const rightSquare = array[right] ** 2;
+
+//     if (leftSquare > rightSquare) {
+//       result[index] = leftSquare;
+//       left++;
+//     } else {
+//       result[index] = rightSquare;
+//       right--;
+//     }
+
+//     index--;
+//   }
+
+//   console.log(result);
+// }
+
+// sortedSquares([-4, -1, 0, 3, 10]);
